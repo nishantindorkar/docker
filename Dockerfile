@@ -1,4 +1,3 @@
-Official Ubuntu 
 FROM ubuntu:latest
 LABEL maintainer="nishant"
 RUN apt-get update && apt-get upgrade -y
