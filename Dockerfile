@@ -5,8 +5,9 @@ RUN mkdir /usr/local/tomcat
 RUN wget https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.85/bin/apache-tomcat-8.5.85.tar.gz -O /tmp/tomcat.tar.gz
 RUN cd /tmp && tar xvfz tomcat.tar.gz
 RUN cp -Rv /tmp/apache-tomcat-8.5.85/* /usr/local/tomcat/
-RUN wget https://s3-us-west-2.amazonaws.com/studentapi-cit/student.war
-RUN mv student.war /usr/local/tomcat/apache-tomcat-8.5.85/webapps/
+RUN ls /usr/local/tomcat/
+RUN wget https://s3-us-west-2.amazonaws.com/studentapi-cit/student.war #-O /usr/local/tomcat/webapps/
+RUN cp -Rv student.war /usr/local/tomcat/webapps/
 EXPOSE 8080
 CMD /usr/local/tomcat/bin/catalina.sh run
 
